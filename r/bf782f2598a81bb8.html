@@ -3,40 +3,106 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>허봇스 마케팅 프로그램 — 안세웅(데모)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background: #0f1b2d; color: #e8edf4; margin: 0; padding: 16px; }
-.wrap { max-width: 720px; margin: 0 auto; }
-h1 { font-size: 20px; margin: 8px 0 2px; } .sub { color: #8fa3bd; font-size: 13px; margin-bottom: 20px; }
-h2 { font-size: 16px; margin: 26px 0 10px; border-left: 4px solid #3b82f6; padding-left: 8px; }
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  margin: 0; padding: 0; color: #EAF1FA; letter-spacing: -0.02em;
+  background: #0D1929; min-height: 100vh; }
+.bg { position: fixed; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse 120% 70% at 50% -10%, rgba(64,138,224,0.22), transparent 60%),
+              linear-gradient(170deg, #0D1929, #142438 55%, #101D2E); }
+.wrap { max-width: 680px; margin: 0 auto; padding: 28px 18px 40px; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; color: #47A3FF;
+  border: 1px solid rgba(71,163,255,0.45); border-radius: 999px; padding: 5px 14px;
+  letter-spacing: 0.02em; }
+h1 { font-size: 26px; font-weight: 800; margin: 14px 0 6px; line-height: 1.35; }
+h1 b { color: #47A3FF; }
+.sub { color: #7F98B6; font-size: 13px; font-weight: 500; }
+.rule { width: 96px; height: 2px; background: rgba(71,163,255,0.55); border-radius: 2px; margin: 18px 0 22px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 26px; }
+.stat { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 12px; padding: 12px 6px; text-align: center; }
+.stat .n { font-size: 22px; font-weight: 800; color: #47A3FF; }
+.stat .l { font-size: 11px; color: #7F98B6; margin-top: 3px; font-weight: 600; }
+h2 { font-size: 17px; font-weight: 800; margin: 30px 0 12px; display: flex; align-items: center; gap: 8px; }
+h2::before { content: ""; width: 4px; height: 18px; background: #47A3FF; border-radius: 2px; }
+.card { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 14px; padding: 4px 14px; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th, td { padding: 8px 6px; border-bottom: 1px solid #223350; text-align: center; }
-th { color: #8fa3bd; font-weight: 600; font-size: 12px; }
-td.kw { text-align: left; }
-.up { color: #4da3ff; } .down { color: #ff6b6b; } .out { color: #7a8aa0; }
-.none { color: #4a5a72; }
-.card { background: #172741; border-radius: 10px; padding: 14px; margin-bottom: 10px; }
-.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-right: 8px; }
-.b-strong { background: #123f24; color: #5ee68f; } .b-mid { background: #3a3413; color: #ffd75e; }
-.b-weak { background: #401a1a; color: #ff8a8a; }
-.cta { display: block; text-align: center; background: #3b82f6; color: #fff; text-decoration: none; padding: 13px; border-radius: 10px; font-weight: 700; margin: 28px 0 10px; }
-.foot { color: #5c6f8a; font-size: 11px; text-align: center; margin-top: 16px; }
-</style></head><body><div class="wrap">
-<h1>허봇스 마케팅 프로그램</h1>
-<div class="sub">안세웅(데모) 트레이너 · 업데이트 2026.09.01 22:56 · 매주 월요일 갱신</div>
-<h2>내 키워드 순위 (네이버 블로그탭 30위까지)</h2>
-<table><tr><th style="text-align:left">키워드</th><th>월 검색량</th><th>내 순위</th><th>변동</th></tr>
-<tr><td class="kw">원주pt</td><td>800</td><td>30</td><td>—</td></tr>
-<tr><td class="kw">원주피티</td><td>260</td><td><span class="none">30위 밖</span></td><td>—</td></tr>
-<tr><td class="kw">원주반곡동pt</td><td>20</td><td>14,21</td><td>—</td></tr>
-<tr><td class="kw">관설동pt</td><td>0</td><td>3,4,6,8</td><td>—</td></tr>
-<tr><td class="kw">관설동피티</td><td>0</td><td>3,6,8,9 외2</td><td>—</td></tr>
-<tr><td class="kw">행구동PT</td><td>0</td><td>2,6</td><td>—</td></tr>
-<tr><td class="kw">원주헬스</td><td>330</td><td>15,27</td><td>—</td></tr>
-<tr><td class="kw">원주체형교정</td><td>370</td><td>8</td><td>—</td></tr>
-</table>
+th { color: #7F98B6; font-weight: 700; font-size: 11.5px; padding: 12px 4px 8px; text-align: center;
+  border-bottom: 1px solid rgba(120,170,230,0.13); }
+th:first-child { text-align: left; }
+td { padding: 10px 4px; border-bottom: 1px solid rgba(120,170,230,0.09); text-align: center; }
+tr:last-child td { border-bottom: none; }
+td.kw { text-align: left; font-weight: 600; font-size: 13.5px; }
+.rk { display: inline-block; min-width: 30px; padding: 3px 9px; border-radius: 8px; font-weight: 800; font-size: 13px; }
+.rk-top { background: #47A3FF; color: #08111d; }
+.rk-mid { border: 1.5px solid rgba(71,163,255,0.6); color: #8fc4ff; }
+.rk-low { color: #9db3cc; }
+.rest { color: #566d8a; font-size: 11.5px; margin-left: 4px; }
+.none { color: #44586f; font-size: 12.5px; }
+.vol { color: #9db3cc; font-size: 12.5px; }
+.up { color: #5ee68f; font-weight: 700; font-size: 12.5px; }
+.down { color: #ff8a8a; font-weight: 700; font-size: 12.5px; }
+.out { color: #7F98B6; font-size: 11.5px; }
+.hcard { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 14px; padding: 15px 16px; margin-bottom: 10px; }
+.badge { display: inline-block; padding: 3px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; margin-right: 9px; }
+.b-strong { background: rgba(94,230,143,0.15); color: #5ee68f; border: 1px solid rgba(94,230,143,0.4); }
+.b-mid { background: rgba(255,215,94,0.12); color: #ffd75e; border: 1px solid rgba(255,215,94,0.35); }
+.b-weak { background: rgba(255,138,138,0.12); color: #ff8a8a; border: 1px solid rgba(255,138,138,0.35); }
+.hdesc { font-size: 13px; color: #b9c7da; margin-top: 8px; line-height: 1.6; }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.shot { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 12px; overflow: hidden; }
+.shot img { width: 100%; display: block; }
+.shot .cap { font-size: 12px; font-weight: 700; padding: 9px 11px; color: #EAF1FA; }
+.shot .cap b { color: #47A3FF; }
+.hint { font-size: 12px; color: #7F98B6; margin-top: 10px; line-height: 1.6; }
+.cta { display: block; text-align: center; background: #47A3FF; color: #08111d; text-decoration: none;
+  padding: 15px; border-radius: 12px; font-weight: 800; font-size: 15px; margin: 34px 0 12px; }
+.foot { color: #566d8a; font-size: 11px; text-align: center; margin-top: 18px; line-height: 1.7; }
+@media (max-width: 420px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+</style></head><body><div class="bg"></div><div class="wrap">
+<span class="pill">허봇스 마케팅 프로그램</span>
+<h1><b>안세웅(데모)</b> 트레이너의<br>이번 주 블로그 성적표</h1>
+<div class="sub">업데이트 2026.09.02 00:05 · 매주 월요일 자동 갱신</div>
+<div class="rule"></div>
+<div class="stats">
+<div class="stat"><div class="n">20</div><div class="l">추적 키워드</div></div>
+<div class="stat"><div class="n">6</div><div class="l">5위 안</div></div>
+<div class="stat"><div class="n">15</div><div class="l">30위 안</div></div>
+<div class="stat"><div class="n">6</div><div class="l">이번 주 인증샷</div></div>
+</div>
+<h2>상위노출 인증샷 <span style="font-size:11px;color:#7F98B6;font-weight:500">5위 안에 들면 자동 캡처</span></h2><div class="gallery"><div class="shot"><img src="bf782f2598a81bb8_img/0902_단구동PT_3위.jpg" loading="lazy"><div class="cap">단구동PT <b>3위</b> · 09/02</div></div><div class="shot"><img src="bf782f2598a81bb8_img/0902_행구동PT_2위.jpg" loading="lazy"><div class="cap">행구동PT <b>2위</b> · 09/02</div></div><div class="shot"><img src="bf782f2598a81bb8_img/0902_관설동헬스_1위.jpg" loading="lazy"><div class="cap">관설동헬스 <b>1위</b> · 09/02</div></div><div class="shot"><img src="bf782f2598a81bb8_img/0902_관설동헬스장_1위.jpg" loading="lazy"><div class="cap">관설동헬스장 <b>1위</b> · 09/02</div></div><div class="shot"><img src="bf782f2598a81bb8_img/0902_관설동피티_3위.jpg" loading="lazy"><div class="cap">관설동피티 <b>3위</b> · 09/02</div></div><div class="shot"><img src="bf782f2598a81bb8_img/0902_관설동pt_3위.jpg" loading="lazy"><div class="cap">관설동pt <b>3위</b> · 09/02</div></div></div><div class="hint">📸 이미지를 꾹 눌러 저장하면 인스타·상담 자료로 바로 쓸 수 있어요. 파란 테두리가 내 글입니다.</div>
+<h2>내 키워드 순위 <span style="font-size:11px;color:#7F98B6;font-weight:500">네이버 블로그탭 30위까지</span></h2>
+<div class="card"><table>
+<tr><th>키워드</th><th>월 검색량</th><th>내 순위</th><th>변동</th></tr>
+<tr><td class="kw">원주pt</td><td class="vol">800</td><td><span class="rk rk-low">30위</span></td><td><span class="vol">=</span></td></tr>
+<tr><td class="kw">원주피티</td><td class="vol">260</td><td><span class="none">30위 밖</span></td><td><span class="vol">—</span></td></tr>
+<tr><td class="kw">원주헬스</td><td class="vol">330</td><td><span class="rk rk-low">15위</span><span class="rest">외 26</span></td><td><span class="vol">=</span></td></tr>
+<tr><td class="kw">원주반곡동pt</td><td class="vol">20</td><td><span class="rk rk-low">14위</span><span class="rest">외 21</span></td><td><span class="vol">=</span></td></tr>
+<tr><td class="kw">원주반곡동피티</td><td class="vol">50</td><td><span class="rk rk-low">17위</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">원주반곡동헬스장</td><td class="vol">140</td><td><span class="none">30위 밖</span></td><td><span class="vol">—</span></td></tr>
+<tr><td class="kw">원주반곡동헬스</td><td class="vol">20</td><td><span class="none">30위 밖</span></td><td><span class="vol">—</span></td></tr>
+<tr><td class="kw">원주혁신도시pt</td><td class="vol">170</td><td><span class="none">30위 밖</span></td><td><span class="vol">—</span></td></tr>
+<tr><td class="kw">원주혁신도시피티</td><td class="vol">20</td><td><span class="none">30위 밖</span></td><td><span class="vol">—</span></td></tr>
+<tr><td class="kw">관설동pt</td><td class="vol">0</td><td><span class="rk rk-top">3위</span><span class="rest">외 4,6,8</span></td><td><span class="vol">=</span></td></tr>
+<tr><td class="kw">관설동피티</td><td class="vol">0</td><td><span class="rk rk-top">3위</span><span class="rest">외 6,8,9…</span></td><td><span class="vol">=</span></td></tr>
+<tr><td class="kw">관설동헬스장</td><td class="vol">10</td><td><span class="rk rk-top">1위</span><span class="rest">외 2,12</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">관설동헬스</td><td class="vol">0</td><td><span class="rk rk-top">1위</span><span class="rest">외 2,6,7…</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">행구동PT</td><td class="vol">0</td><td><span class="rk rk-top">2위</span><span class="rest">외 6</span></td><td><span class="vol">=</span></td></tr>
+<tr><td class="kw">단구동PT</td><td class="vol">10</td><td><span class="rk rk-top">3위</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">원주단구동피티</td><td class="vol">10</td><td><span class="rk rk-low">14위</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">원주단구동헬스장</td><td class="vol">200</td><td><span class="rk rk-mid">6위</span><span class="rest">외 15</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">원주pt가격</td><td class="vol">40</td><td><span class="rk rk-mid">9위</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">원주헬스PT</td><td class="vol">10</td><td><span class="rk rk-mid">8위</span></td><td><span class="up">신규</span></td></tr>
+<tr><td class="kw">원주체형교정</td><td class="vol">370</td><td><span class="rk rk-mid">9위</span></td><td><span class="down">▼1</span></td></tr>
+</table></div>
 <h2>내 블로그 건강 진단</h2>
-<div class="card"><span class="badge b-mid">보통</span><b>gjwodbs7</b><br><span style="font-size:13px;color:#b9c7da">건강 — 새 글이 검색에 정상 반영되고 있습니다 · 제목검색 1위 5/5 · 누적방문 8,172</span></div>
-<div class="card"><span class="badge b-mid">보통</span><b>answ1214</b><br><span style="font-size:13px;color:#b9c7da">주의 — 최근 글 5개 중 1개가 제목 검색에서 밀려 있습니다 · 제목검색 1위 4/5 · 누적방문 1,958</span></div>
+<div class="hcard"><span class="badge b-mid">보통</span><b style="font-size:14px">gjwodbs7</b><div class="hdesc">새 글이 검색에 정상 반영되고 있습니다 · 제목검색 1위 5/5 · 누적방문 8,172</div></div>
+<div class="hcard"><span class="badge b-mid">보통</span><b style="font-size:14px">answ1214</b><div class="hdesc">최근 글 5개 중 1개가 제목 검색에서 밀려 있습니다 · 제목검색 1위 4/5 · 누적방문 1,959</div></div>
 <a class="cta" href="https://www.youtube.com/@피티선배">순위를 올리는 방법이 궁금하다면 → 피티선배</a>
-<div class="foot">허봇스 마케팅 프로그램 · 실측 데이터 기반 · 무단 공유를 삼가주세요</div>
+<div class="foot">허봇스 마케팅 프로그램 · 실제 검색 결과 실측 기반<br>이 링크는 회원 전용입니다 · 무단 공유를 삼가주세요</div>
 </div></body></html>
