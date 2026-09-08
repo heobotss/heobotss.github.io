@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>허봇스 마케팅 프로그램 — 허재윤2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  margin: 0; padding: 0; color: #EAF1FA; letter-spacing: -0.02em;
+  background: #0D1929; min-height: 100vh; }
+.bg { position: fixed; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse 120% 70% at 50% -10%, rgba(64,138,224,0.22), transparent 60%),
+              linear-gradient(170deg, #0D1929, #142438 55%, #101D2E); }
+.wrap { max-width: 680px; margin: 0 auto; padding: 28px 18px 40px; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; color: #47A3FF;
+  border: 1px solid rgba(71,163,255,0.45); border-radius: 999px; padding: 5px 14px;
+  letter-spacing: 0.02em; }
+h1 { font-size: 26px; font-weight: 800; margin: 14px 0 6px; line-height: 1.35; }
+h1 b { color: #47A3FF; }
+.sub { color: #7F98B6; font-size: 13px; font-weight: 500; }
+.rule { width: 96px; height: 2px; background: rgba(71,163,255,0.55); border-radius: 2px; margin: 18px 0 22px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 26px; }
+.stat { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 12px; padding: 12px 6px; text-align: center; }
+.stat .n { font-size: 22px; font-weight: 800; color: #47A3FF; }
+.stat .l { font-size: 11px; color: #7F98B6; margin-top: 3px; font-weight: 600; }
+h2 { font-size: 17px; font-weight: 800; margin: 30px 0 12px; display: flex; align-items: center; gap: 8px; }
+h2::before { content: ""; width: 4px; height: 18px; background: #47A3FF; border-radius: 2px; }
+.card { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 14px; padding: 4px 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { color: #7F98B6; font-weight: 700; font-size: 11.5px; padding: 12px 4px 8px; text-align: center;
+  border-bottom: 1px solid rgba(120,170,230,0.13); }
+th:first-child { text-align: left; }
+td { padding: 10px 4px; border-bottom: 1px solid rgba(120,170,230,0.09); text-align: center; }
+tr:last-child td { border-bottom: none; }
+td.kw { text-align: left; font-weight: 600; font-size: 13.5px; }
+.rk { display: inline-block; min-width: 30px; padding: 3px 9px; border-radius: 8px; font-weight: 800; font-size: 13px; }
+.rk-top { background: #47A3FF; color: #08111d; }
+.rk-mid { border: 1.5px solid rgba(71,163,255,0.6); color: #8fc4ff; }
+.rk-low { color: #9db3cc; }
+.rest { color: #566d8a; font-size: 11.5px; margin-left: 4px; }
+.none { color: #44586f; font-size: 12.5px; }
+.vol { color: #9db3cc; font-size: 12.5px; }
+.up { color: #5ee68f; font-weight: 700; font-size: 12.5px; }
+.down { color: #ff8a8a; font-weight: 700; font-size: 12.5px; }
+.out { color: #7F98B6; font-size: 11.5px; }
+.hcard { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 14px; padding: 15px 16px; margin-bottom: 10px; }
+.badge { display: inline-block; padding: 3px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; margin-right: 9px; }
+.b-strong { background: rgba(94,230,143,0.15); color: #5ee68f; border: 1px solid rgba(94,230,143,0.4); }
+.b-mid { background: rgba(255,215,94,0.12); color: #ffd75e; border: 1px solid rgba(255,215,94,0.35); }
+.b-weak { background: rgba(255,138,138,0.12); color: #ff8a8a; border: 1px solid rgba(255,138,138,0.35); }
+.hdesc { font-size: 13px; color: #b9c7da; margin-top: 8px; line-height: 1.6; }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.shot { background: rgba(23,39,65,0.75); border: 1px solid rgba(120,170,230,0.13);
+  border-radius: 12px; overflow: hidden; }
+.shot img { width: 100%; display: block; }
+.shot .cap { font-size: 12px; font-weight: 700; padding: 9px 11px; color: #EAF1FA; }
+.shot .cap b { color: #47A3FF; }
+.hint { font-size: 12px; color: #7F98B6; margin-top: 10px; line-height: 1.6; }
+.cta { display: block; text-align: center; background: #47A3FF; color: #08111d; text-decoration: none;
+  padding: 15px; border-radius: 12px; font-weight: 800; font-size: 15px; margin: 34px 0 12px; }
+.foot { color: #566d8a; font-size: 11px; text-align: center; margin-top: 18px; line-height: 1.7; }
+@media (max-width: 420px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+</style></head><body><div class="bg"></div><div class="wrap">
+<span class="pill">허봇스 마케팅 프로그램</span>
+<h1><b>허재윤2</b> 트레이너의<br>이번 주 블로그 성적표</h1>
+<div class="sub">업데이트 2026.09.08 14:00 · 매주 월요일 자동 갱신</div>
+<div class="rule"></div>
+<div class="stats">
+<div class="stat"><div class="n">3</div><div class="l">추적 키워드</div></div>
+<div class="stat"><div class="n">1</div><div class="l">5위 안</div></div>
+<div class="stat"><div class="n">1</div><div class="l">30위 안</div></div>
+<div class="stat"><div class="n">1</div><div class="l">이번 주 인증샷</div></div>
+</div>
+<!--속보시작--><!--속보끝-->
+<h2>상위노출 인증샷 <span style="font-size:11px;color:#7F98B6;font-weight:500">5위 안에 들면 자동 캡처</span></h2><div class="gallery"><div class="shot"><img src="85dad5b68c58a16b_img/0908_원주혁신도시피티_5위.jpg" loading="lazy"><div class="cap">원주혁신도시피티 <b>5위</b> · 09/08</div></div></div><div class="hint">📸 이미지를 꾹 눌러 저장하면 인스타·상담 자료로 바로 쓸 수 있어요. 파란 테두리가 내 글입니다.</div>
+<h2>LV2 도전 현황 <span style="font-size:11px;color:#7F98B6;font-weight:500">다음 단계(LV2 세미나) 기준은 추후 공개됩니다</span></h2><div class="card" style="padding:15px 16px"><div style="display:flex;gap:24px"><div><div style="font-size:22px;font-weight:800;color:#47A3FF">0</div><div style="font-size:11.5px;color:#7F98B6">통과글<br>피드백 통과 + 검색 1위</div></div><div><div style="font-size:22px;font-weight:800;color:#5ee68f">0</div><div style="font-size:11.5px;color:#7F98B6">총 발행<br>프로그램 시작 후 쓴 글</div></div><div><div style="font-size:22px;font-weight:800;color:#EAF1FA">0</div><div style="font-size:11.5px;color:#7F98B6">검색 1위 글</div></div></div><div class="hint" style="margin-top:10px">이 기록은 매주 자동으로 쌓입니다 — 기준이 공개될 때 이미 충족되어 있으면 바로 자격 안내를 드립니다</div></div>
+
+<h2>이번 주 미션</h2><div class="hcard"><b style="color:#47A3FF;font-size:15px">「원주pt」</b> 글을 쓰세요<div class="hdesc">월 900회 검색 · 아직 내 글 없음 — 10위 안에 들면 이 검색량이 내 손님이 됩니다</div><div class="hdesc" style="color:#8fc4ff;margin-top:6px">🔍 상위 10개 글 정찰 결과 — 사진 21장·2,537자가 이 판의 표준. 노릴 자리는 10위 (가장 약한 글)</div></div><div class="hint">최근 4주 안에 이미 쓴 키워드는 자동으로 뺐어요 — 같은 키워드는 4주 간격을 지켜주세요</div>
+<h2>내 키워드 순위 <span style="font-size:11px;color:#7F98B6;font-weight:500">네이버 블로그탭 30위까지 · 검색량순</span></h2>
+<div class="card"><table>
+<tr><th>키워드</th><th>월 검색량</th><th>내 순위</th><th>변동</th></tr>
+<tr><td class="kw">원주pt</td><td class="vol">900</td><td><span class="none">30위 밖</span></td><td><span class="vol">—</span></td></tr>
+<tr><td class="kw">원주혁신도시pt</td><td class="vol">160</td><td><span class="none">30위 밖</span></td><td><span class="vol">—</span></td></tr>
+<tr><td class="kw">원주혁신도시피티</td><td class="vol">40</td><td><span class="rk rk-top">5위</span></td><td><span class="vol">—</span></td></tr>
+</table></div>
+
+<h2>내 블로그 건강 진단</h2>
+<div class="hcard"><span class="badge b-mid">보통</span><b style="font-size:14px">gjwodbs7</b><div class="hdesc">새 글이 검색에 정상 반영되고 있습니다 · 제목검색 1위 5/5 · 누적방문 8,232</div></div>
+<a class="cta" style="background:transparent;border:1.5px solid rgba(71,163,255,0.6);color:#8fc4ff"
+   href="mailto:gjwodbs77@gmail.com?subject=%5B%ED%94%BC%EB%93%9C%EB%B0%B1%EC%8B%A0%EC%B2%AD%5D%20허재윤2&body=%EA%B8%80%20%EC%A3%BC%EC%86%8C%3A%20(%EC%97%AC%EA%B8%B0%EC%97%90%20%EB%B6%99%EC%97%AC%EB%84%A3%EA%B8%B0)%0A%ED%82%A4%EC%9B%8C%EB%93%9C%3A%20(%EC%98%88%3A%20%EC%9B%90%EC%A3%BCpt)">✍ 내 글 피드백 신청하기</a>
+<div class="hint" style="text-align:center;margin-top:-4px">글 주소와 키워드를 적어 보내면, 피드백(고칠 것 목록)이 메일로 옵니다 · 통과글이 쌓이면 LV2 자격</div>
+<div class="hint" style="text-align:center;margin-top:8px"><a href="mailto:gjwodbs77@gmail.com?subject=%5B%ED%82%A4%EC%9B%8C%EB%93%9C%EB%B3%80%EA%B2%BD%5D%20%ED%97%88%EC%9E%AC%EC%9C%A42%20%2885dad5b68c58a16b%29&body=%EC%95%84%EB%9E%98%20%EB%AA%A9%EB%A1%9D%EC%9D%84%20%EC%9B%90%ED%95%98%EC%8B%9C%EB%8A%94%20%EC%B5%9C%EC%A2%85%20%ED%82%A4%EC%9B%8C%EB%93%9C%EB%A1%9C%20%EA%B3%A0%EC%B3%90%EC%84%9C%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EB%B3%B4%EB%82%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%28%ED%95%9C%20%EC%A4%84%EC%97%90%20%ED%95%98%EB%82%98%20%C2%B7%20%EC%B5%9C%EB%8C%80%2020%EA%B0%9C%20%C2%B7%20%EC%A7%80%EC%97%AD%2B%EC%97%85%EC%A2%85%20%ED%98%95%ED%83%9C%29%0A%0A%EC%9B%90%EC%A3%BC%ED%98%81%EC%8B%A0%EB%8F%84%EC%8B%9Cpt%0A%EC%9B%90%EC%A3%BC%ED%98%81%EC%8B%A0%EB%8F%84%EC%8B%9C%ED%94%BC%ED%8B%B0%0A%EC%9B%90%EC%A3%BCpt%0A" style="color:#7F98B6">추적 키워드를 바꾸고 싶다면 → 키워드 변경 신청</a></div>
+<a class="cta" href="https://www.instagram.com/heobotss/">순위를 올리는 방법이 궁금하다면 → @heobotss</a>
+<div class="foot">허봇스 마케팅 프로그램 · 실제 검색 결과 실측 기반<br>이 링크는 회원 전용입니다 · 무단 공유를 삼가주세요</div>
+</div></body></html>
