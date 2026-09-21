@@ -106,7 +106,23 @@ td.kw { text-align: left; font-weight: 600; font-size: 13.5px; }
 <h2>추천 키워드 <span style="font-size:11px;color:#7F98B6;font-weight:500">내 상권에서 검색되고 있는 연관 키워드</span></h2><div class="card"><table><tr><th>키워드</th><th>월 검색량</th><th>광고경쟁</th></tr><tr><td class="kw">대전헬스장</td><td class="vol">2,560</td><td class="vol">높음</td></tr><tr><td class="kw">대전필라테스</td><td class="vol">1,850</td><td class="vol">높음</td></tr><tr><td class="kw">대전요가</td><td class="vol">860</td><td class="vol">높음</td></tr><tr><td class="kw">대전헬스보이짐</td><td class="vol">590</td><td class="vol">높음</td></tr><tr><td class="kw">대전봉명동헬스장</td><td class="vol">440</td><td class="vol">높음</td></tr><tr><td class="kw">대전동구헬스장</td><td class="vol">420</td><td class="vol">높음</td></tr></table></div><div class="hint">아직 추적하지 않는 키워드예요. 글을 써보고 싶은 게 있으면 대표님(허봇스)에게 추가 요청하세요.</div>
 <h2>내 블로그 건강 진단</h2>
 <div class="hcard"><span class="badge b-mid">보통</span><b style="font-size:14px">ozenhi_ggang</b><div class="hdesc">새 글이 검색에 정상 반영되고 있습니다 · 제목검색 1위 5/5 · 누적방문 732</div></div>
-<!--피드백이용권시작--><div class="card" style="padding:14px 16px;margin-top:26px"><div style="font-size:14px;font-weight:700">다음 새 글 피드백 <b style="color:#5ee68f">1회 사용 가능</b></div><div class="hint" style="margin-top:6px">글을 쓰면 아래 「피드백 신청」 버튼을 누르세요 · 같은 글 재검수는 언제나 무료</div><a href="mailto:gjwodbs77@gmail.com?subject=%5B%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%9D%B8%EC%A6%9D%5D%20%EA%B9%80%EA%B2%BD%ED%99%98%20%28dcc58bc83767374f%29&body=%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%97%90%20%40heobotss%20%ED%83%9C%EA%B7%B8%ED%95%B4%EC%84%9C%20%EC%98%AC%EB%A0%B8%EC%96%B4%EC%9A%94%21%0A%EC%9D%B8%EC%8A%A4%ED%83%80%20%EC%95%84%EC%9D%B4%EB%94%94%3A%20" style="display:inline-block;margin-top:10px;color:#8fc4ff;font-size:13px;font-weight:700;text-decoration:none">📸 스토리 올렸어요 →</a></div><!--피드백이용권끝-->
+<!--피드백이용권시작--><div class="card" style="padding:14px 16px;margin-top:26px"><div style="font-size:14px;font-weight:700">다음 새 글 피드백 <b style="color:#5ee68f">1회 사용 가능</b></div><div class="hint" style="margin-top:6px">글을 쓰면 아래 「피드백 신청」 버튼을 누르세요 · 같은 글 재검수는 언제나 무료</div><div id="story" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(120,170,230,.15)"><div style="font-size:13.5px;font-weight:700">📸 스토리 인증 사진 올리기</div><div class="hint" style="margin-top:4px">@heobotss 를 태그한 스토리 화면을 캡처해서 올리면 바로 다음 새 글 피드백 1회가 열려요</div><input id="hb-sf" type="file" accept="image/*" style="margin-top:10px;font-size:13px;color:#B9C7DA;max-width:100%"><button id="hb-sb" type="button" style="display:block;width:100%;margin-top:10px;padding:12px;border:0;border-radius:10px;background:#F2F2F2;color:#0A0A0A;font-weight:800;font-size:14px">보내기</button><div id="hb-sm" class="hint" style="margin-top:8px"></div></div></div><script>(function(){
+var f=document.getElementById('hb-sf'),b=document.getElementById('hb-sb'),m=document.getElementById('hb-sm');
+if(!f||!b)return;
+function shrink(file){return new Promise(function(ok,bad){var r=new FileReader();r.onload=function(){
+ var im=new Image();im.onload=function(){var s=Math.min(1,1280/Math.max(im.width,im.height));
+ var c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);
+ c.getContext('2d').drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',0.85));};
+ im.onerror=bad;im.src=r.result;};r.onerror=bad;r.readAsDataURL(file);});}
+b.onclick=function(){if(!f.files||!f.files[0]){m.textContent='먼저 스토리 캡처 사진을 골라주세요';return;}
+ b.disabled=true;m.textContent='올리는 중…';
+ shrink(f.files[0]).then(function(img){return fetch('https://kpubgeejyiupdvbbdxwt.supabase.co/functions/v1/story-upload',{method:'POST',
+  headers:{'content-type':'application/json'},body:JSON.stringify({token:'dcc58bc83767374f',image:img})});})
+ .then(function(r){return r.json();}).then(function(j){
+  if(j.ok){m.innerHTML='✅ 접수됐어요! <b>다음 새 글 피드백이 열립니다</b> (10분 안에 반영)';f.value='';}
+  else{m.textContent='⚠ '+(j.msg||'실패했어요');}b.disabled=false;})
+ .catch(function(){m.textContent='⚠ 올리지 못했어요. 잠시 뒤 다시 시도해 주세요';b.disabled=false;});};
+})();</script><!--피드백이용권끝-->
 <a class="cta" style="background:transparent;border:1.5px solid rgba(71,163,255,0.6);color:#8fc4ff"
    href="mailto:gjwodbs77@gmail.com?subject=%5B%ED%94%BC%EB%93%9C%EB%B0%B1%EC%8B%A0%EC%B2%AD%5D%20김경환&body=%EA%B8%80%20%EC%A3%BC%EC%86%8C%3A%20(%EC%97%AC%EA%B8%B0%EC%97%90%20%EB%B6%99%EC%97%AC%EB%84%A3%EA%B8%B0)%0A%ED%82%A4%EC%9B%8C%EB%93%9C%3A%20(%EC%A0%9C%EB%AA%A9%20%EB%A7%A8%20%EC%95%9E%EC%97%90%20%EC%93%B4%20%ED%82%A4%EC%9B%8C%EB%93%9C%EB%A1%9C%20%EB%B0%94%EA%BF%94%EC%A3%BC%EC%84%B8%EC%9A%94)">✍ 내 글 피드백 신청하기</a>
 <div class="hint" style="text-align:center;margin-top:-4px">글 주소와 키워드를 적어 보내면, 피드백(고칠 것 목록)이 메일로 옵니다 · 통과글이 쌓이면 LV2 자격</div>
